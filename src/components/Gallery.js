@@ -31,6 +31,8 @@ class Gallery extends Component{
         <div>
             {this.state.clicked===false && this.props.ImgData?
             <Grid>   
+                    <br/>
+                    <br/>
                     { this.props.ImgData.map((image)=>{
                                 return (
                     
@@ -51,21 +53,19 @@ class Gallery extends Component{
                             })   
                     }
              </Grid>:
-                    <Grid style={{color:"black"}}>
+                    <Grid style={{color:"white", backgroundColor: "black"}}>
                         <Grid.Row>
                             <Grid.Column>
                                 <br/>
-                              <Image src={this.state.imageUrl} alt="Original image cannot be displayed: 403 Forbidden error" />    
-                              <br/>
-                              <br/>
-                              <Image src={this.state.thumbnail} /> 
+                              {/* <Image src={this.state.imageUrl} alt="Original image cannot be displayed: 403 Forbidden error" />     */}
+                              <Image src={this.state.thumbnail}/> 
                               {/* The thumbnail is added because the original image cannot be displayed due to 403 error                                */}
                               <h1>Title:{this.state.title}</h1>
                               <h2>Author:{this.state.author}</h2>
                             </Grid.Column>
                         </Grid.Row>
                         <Grid.Row>
-                                <button class="ui secondary button" onClick={()=>{this.setState({clicked:false})}}>
+                                <button className="ui secondary button" onClick={()=>{this.setState({clicked:false})}}>
                                     Go Back
                                 </button>
                         </Grid.Row>

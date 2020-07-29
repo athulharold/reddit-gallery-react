@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Grid, Image } from 'semantic-ui-react';
 import Gallery from './Gallery';
 import Fuse from 'fuse.js'
 class Search extends Component{
 
     state={
         searchText:'',
-        apiUrl:'http://www.reddit.com/r/pics/.json?jsonp=',
+        apiUrl:'https://www.reddit.com/r/pics/.json?jsonp=',
         callData: {}, 
         arrived:false
     }
@@ -36,11 +35,17 @@ class Search extends Component{
 
           <div style={{
                     color:'white',
-                    marginLeft: 100,
+                    marginLeft: 10,
                     marginTop:100,
-                    fontSize:30}}>   
+                    fontSize:15}}>   
+             <h1 class="ui header" >
+            <img class="ui image" src="https://miro.medium.com/max/720/1*mQz1eSo1ZkL-Rufb5Xfrqw.png"  alt=""/>
+                <div class="content" style={{color:'white'}}>
+                    Reddit Image Gallery
+                </div>
+            </h1>
         <div className="ui label" style={{  
-                fontSize:15
+                fontSize:13
                 }}>
             Search for an image
         </div>   
@@ -57,7 +62,7 @@ class Search extends Component{
             this.state.arrived?
             <Gallery ImgData={this.state.callData}/>
             : 
-            <p>Loading...</p>
+            <p></p>
             
         }
         
